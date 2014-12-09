@@ -1,6 +1,6 @@
 $(document).ready(function(){
 // Setup variables for our forecast.io request
-var apiKey = 'my key goes here';
+var apiKey = 'c71da6cd4fe6cfb58b704f3a5b6b282c';
 var apiURL = 'https://api.forecast.io/forecast/' + apiKey;
 var defaultLat = '40.6760148';
 var defaultLng = '-73.9785012';
@@ -237,3 +237,46 @@ $('#temp').text('Oh no! Your forecast is currently unavailable.');
 $('body').css('background-color','rgb(240,14,10');
 }
 });
+
+	 function parseIcon(icon)
+	 {
+	    	switch(icon) 
+	    	{
+	    		case "cloudy":
+	    			var img = "cloudy.png";
+	    		break;
+	    		
+    			case "clearDay":	
+                	   var img = "clear-day.png";
+			
+				break;
+
+			case "sleet":	
+                	   var img = "sleet.png";
+
+	               		 break;
+    			case "rain":
+                	  var img = "rainy.jpg";
+
+	               		 break;
+    		case "Snow":
+    		var img = "Snow.pgn";
+
+
+                	
+				break;
+
+			case "clear-night":
+				var img = "clear-night.png";
+    				break;	
+		}
+		return img;
+    	}
+
+
+	// Show an error if we can't access the weather
+	function showError()
+	{
+		$('#temp').text('Oops! There is a problem with the connection.');
+		$('body').css('background-color','rgb(236,93,183');	
+	}
